@@ -10,7 +10,7 @@ s.description  = <<-DESC
 DESC
 s.homepage     = "https://github.com/JokerKevin/CLBaseObject-C"
 s.author             = { "jokerzcl" => "493008927@qq.com" }
-s.source       = { :git => "https://github.com/JokerKevin/CLBaseObject-C", :tag => "#{s.version}" }
+s.source       = { :git => "https://github.com/JokerKevin/CLBaseObject-C.git", :tag => "#{s.version}" }
 
 s.source_files  = "CLBaseObject-C/Classes/*/*"
 s.dependency 'MJRefresh'
