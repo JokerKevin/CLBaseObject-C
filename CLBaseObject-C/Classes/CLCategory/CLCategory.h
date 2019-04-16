@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -51,9 +50,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///push方法.
 #define pushViewControllerClass(class) [[UIApplication shareViewController].navigationController pushViewController:class animated:YES]
 ///获取AppDelegate.
-+(AppDelegate *)shareAppDelegate;
+//+(AppDelegate *)shareAppDelegate;
 ///获取当前ViewController.
-+(UIViewController *)shareViewController;
+//+(UIViewController *)shareViewController;
 @end
 
 @interface UIViewController (CLCategory)

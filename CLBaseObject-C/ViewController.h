@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CLViewController/CLViewController.h"
+#import "Classes/CLViewController/CLViewController.h"
 @interface ViewController : CLViewController
 
 

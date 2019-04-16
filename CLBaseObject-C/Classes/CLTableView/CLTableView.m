@@ -7,7 +7,7 @@
 //
 
 #import "CLTableView.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 #import "CLCategory.h"
 #import "objc/runtime.h"
 

@@ -131,13 +131,13 @@ const NSString *password = @"00000000";
 @end
 
 @implementation UIApplication (CLCategory)
-+(AppDelegate *)shareAppDelegate{
-    return (AppDelegate *)[UIApplication sharedApplication].delegate;
-}
-
-+(UIViewController * )shareViewController{
-    return [[self shareAppDelegate].window visibleViewController];
-}
+//+(AppDelegate *)shareAppDelegate{
+//    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+//}
+//
+//+(UIViewController * )shareViewController{
+//    return [[self shareAppDelegate].window visibleViewController];
+//}
 @end
 
 @implementation UIViewController (CLCategory)
