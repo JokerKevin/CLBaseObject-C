@@ -13,13 +13,11 @@
 #import <MJExtension/MJExtension.h>
 #import <MJRefresh/MJRefresh.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @class CLNetworkModel;
 
-NS_ASSUME_NONNULL_BEGIN
 typedef void (^CLFailBlock) (NSError * error);
 typedef void (^CLSuccessBlock) (CLNetworkModel * successModel , NSDictionary * successDict , BOOL isCahe);
-
 
 @interface CLNetwork : NSObject
 
@@ -27,12 +25,12 @@ typedef void (^CLSuccessBlock) (CLNetworkModel * successModel , NSDictionary * s
  POST 自动提示.
  */
 +(NSURLSessionDataTask *)POST:(NSString *)URLString
-     parameters:(NSDictionary *)parameters
-     scrollView:(UIScrollView *)scrollView
-        success:(CLSuccessBlock)successBlock
-           fail:(CLFailBlock)failBlock
-            end:(CLSuccessBlock)endBlock
-        isCache:(BOOL)isCache;
+                   parameters:(NSDictionary *)parameters
+                   scrollView:(UIScrollView *)scrollView
+                      success:(CLSuccessBlock)successBlock
+                         fail:(CLFailBlock)failBlock
+                          end:(CLSuccessBlock)endBlock
+                      isCache:(BOOL)isCache;
 
 /**
  POST 不自动提示.
@@ -45,13 +43,24 @@ typedef void (^CLSuccessBlock) (CLNetworkModel * successModel , NSDictionary * s
                           end:(CLSuccessBlock)endBlock
                       isCache:(BOOL)isCache
                        isShow:(BOOL)isShow;
+
++(NSURLSessionDataTask *)POST:(NSString *)URLString
+                       images:(NSArray *)images
+                      success:(CLSuccessBlock)successBlock
+                     progress:(void(^)(NSProgress * _Nonnull uploadProgress))progress
+                         fail:(CLFailBlock)failBlock;
 @end
 
+@class CLNetworkInfoModel;
 @interface CLNetworkModel : JSONModel
-@property(nonatomic,assign)NSInteger            ret;
-@property(nonatomic,copy)NSString <Optional>    * code;
-@property(nonatomic,copy)id <Optional>          data;
+@property(nonatomic,assign)NSInteger            state;
+@property(nonatomic,copy)CLNetworkInfoModel <Optional> *         info;
+//@property(nonatomic,copy)NSString <Optional> * isNull;
+@end
+
+@interface CLNetworkInfoModel : JSONModel
+@property(nonatomic,copy)NSString <Optional> * message;
+@property(nonatomic,copy)id <Optional> data;
 @property(nonatomic,copy)NSString <Optional> * isNull;
 @end
-
 NS_ASSUME_NONNULL_END
